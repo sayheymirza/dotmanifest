@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1687508437255,
+  "timestamp": 1687589625137,
   "index": "https://sayheymirza.github.io/dotmanifest/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://sayheymirza.github.io/dotmanifest/favicon.ico",
         "https://sayheymirza.github.io/dotmanifest/index.html",
-        "https://sayheymirza.github.io/dotmanifest/main.c3d0edbac2e883a3.js",
+        "https://sayheymirza.github.io/dotmanifest/main.b1594431f4607c3f.js",
         "https://sayheymirza.github.io/dotmanifest/manifest.webmanifest",
         "https://sayheymirza.github.io/dotmanifest/polyfills.1afc2f4cea1e2248.js",
         "https://sayheymirza.github.io/dotmanifest/runtime.9769bf1d7a0c718c.js",
-        "https://sayheymirza.github.io/dotmanifest/styles.17987df9c1b70985.css"
+        "https://sayheymirza.github.io/dotmanifest/styles.572568dbe547151b.css"
       ],
       "patterns": []
     },
@@ -58,12 +58,12 @@
     "https://sayheymirza.github.io/dotmanifest/assets/images/google.svg": "10f1b3647dd323ee10969b634bfababe57a9f0a0",
     "https://sayheymirza.github.io/dotmanifest/assets/images/wallpaper.png": "c173b0c4cc41a7bbe0f53bd17872c53784a8fbc9",
     "https://sayheymirza.github.io/dotmanifest/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://sayheymirza.github.io/dotmanifest/index.html": "db0f5979e3f907a9268e9fe0356dd3d81979cf36",
-    "https://sayheymirza.github.io/dotmanifest/main.c3d0edbac2e883a3.js": "7e0feb20c9d5f2a5b5c94d6c035f9d20e78951a0",
+    "https://sayheymirza.github.io/dotmanifest/index.html": "d5350e1095e725f0085fc2c6f16bbc8a811f944c",
+    "https://sayheymirza.github.io/dotmanifest/main.b1594431f4607c3f.js": "196840454f29a346c130f5fc93c510b217aa2764",
     "https://sayheymirza.github.io/dotmanifest/manifest.webmanifest": "4fe78a7bda77b01575eefa4e9714e81e28783ee1",
     "https://sayheymirza.github.io/dotmanifest/polyfills.1afc2f4cea1e2248.js": "a161a66135665a4d3cb9dff093681ddae4eb7a47",
     "https://sayheymirza.github.io/dotmanifest/runtime.9769bf1d7a0c718c.js": "3c3e4017b087446d8e7fbf4f8b75a9f1aea91141",
-    "https://sayheymirza.github.io/dotmanifest/styles.17987df9c1b70985.css": "982aed6486bd8b2982bd94ccd0ab31207f2e1043"
+    "https://sayheymirza.github.io/dotmanifest/styles.572568dbe547151b.css": "c7cbac9de47ddcdf209249f6dc3e3ee593f5816b"
   },
   "navigationUrls": [
     {
