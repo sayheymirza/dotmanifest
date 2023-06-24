@@ -62,7 +62,7 @@ ${this.ManifestIconSizes.map((size) => `\t└── icon-${size}.png`).join('\n'
     '144x144',
     '152x152',
     '192x192',
-    '348x348',
+    '384x384',
     '512x512'
   ];
 
