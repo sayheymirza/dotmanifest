@@ -66,7 +66,7 @@ ${this.ManifestIconSizes.map((size) => `\t└── icon-${size}.png`).join('\n'
     '512x512'
   ];
 
-  public ManifestIcon: string = '/assets/images/application.png';
+  public ManifestIcon: string = './assets/images/application.png';
 
   public GeneratedManifestIconsBySize: any = {};
 
