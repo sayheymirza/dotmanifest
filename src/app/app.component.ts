@@ -64,9 +64,11 @@ ${this.ManifestIconSizes.map((size) => `\t└── icon-${size}.png`).join('\n'
     '192x192',
     '348x348',
     '512x512'
-  ]
+  ];
 
   public ManifestIcon: string = '/assets/images/application.png';
+
+  public GeneratedManifestIconsBySize: any = {};
 
   public Previews: any[] = [
     {
@@ -118,7 +120,7 @@ ${this.ManifestIconSizes.map((size) => `\t└── icon-${size}.png`).join('\n'
         return control?.invalid ? key : '';
       }).filter((key) => key !== '');
       console.log(this.Errors);
-      
+
       return;
     }
 
@@ -128,17 +130,18 @@ ${this.ManifestIconSizes.map((size) => `\t└── icon-${size}.png`).join('\n'
 
     if (this.file) {
       const p = pica();
-      const canvas = document.createElement('canvas');
-      const image = new Image();
-
-      image.src = URL.createObjectURL(this.file);
 
       const promises = this.ManifestIconSizes.map((size) => {
-        const [width, height] = size.split('x');
-        canvas.width = parseInt(width);
-        canvas.height = parseInt(height);
-
         return new Promise<void>((resolve, reject) => {
+          const [width, height] = size.split('x');
+
+          const canvas = document.createElement('canvas');
+
+          canvas.width = parseInt(width);
+          canvas.height = parseInt(height);
+
+          const image = new Image();
+          image.src = URL.createObjectURL(this.file!);
           image.onload = () => {
             p.resize(image, canvas, {
               unsharpAmount: 80,
@@ -146,6 +149,7 @@ ${this.ManifestIconSizes.map((size) => `\t└── icon-${size}.png`).join('\n'
               unsharpThreshold: 2
             }).then((result) => {
               result.toBlob((blob) => {
+                this.GeneratedManifestIconsBySize[size] = URL.createObjectURL(blob!);
                 zip.file(`icons/icon-${size}.png`, blob!);
                 resolve();
               }, 'image/png');
@@ -158,7 +162,7 @@ ${this.ManifestIconSizes.map((size) => `\t└── icon-${size}.png`).join('\n'
         zip.generateAsync({ type: 'blob' }).then((content) => {
           FileSaver.saveAs(content, `${this.FormGroup.get('short_name')!.value}.zip`);
         });
-      });
+      }).catch(console.error)
     }
   }
 }

@@ -17,7 +17,17 @@
   </p>
 
   <section class="bg-slate-200 text-slate-900 rounded-xl p-4">
-    If you don't know what is a manifest file, you can read more about it on <a href="https://web.dev/add-manifest/" target="_blank" class="underline">Web.dev</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank" class="underline">MDN</a>.
+    If you don't know what is a manifest file, you can read more about it on
+    <a href="https://web.dev/add-manifest/" target="_blank" class="underline"
+      >Web.dev</a
+    >
+    or
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/Manifest"
+      target="_blank"
+      class="underline"
+      >MDN</a
+    >.
   </section>
 
   <form [formGroup]="FormGroup" class="flex flex-col gap-4">
@@ -140,19 +150,33 @@
     accept="image/*"
   />
 
-  <div class="flex flex-nowrap overflow-y-scroll scrollbar-none w-[calc(100vw_-_2rem)] md:w-[unset] rounded-xl md:grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div
+    class="flex flex-nowrap overflow-y-scroll scrollbar-none w-[calc(100vw_-_2rem)] md:w-[unset] rounded-xl md:grid md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
     <div
       *ngFor="let item of ManifestIconSizes"
-      class="h-[150px] min-w-[150px] md:min-w-[unset] rounded-xl border border-dashed flex flex-col items-center justify-center"
+      class="h-[150px] min-w-[150px] md:min-w-[unset] rounded-xl border border-dashed flex flex-col items-center justify-center relative overflow-hidden"
     >
-      {{ item }}
+      <img
+        *ngIf="GeneratedManifestIconsBySize[item]"
+        [src]="GeneratedManifestIconsBySize[item]"
+        class="w-full h-full object-contain object-center absolute inset-0"
+      />
+
+      <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+
+      <span class="z-10">
+        {{ item }}
+      </span>
     </div>
   </div>
 
   <br />
 
   <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-    <div class="flex flex-col items-center md:items-start text-center md:text-start md:max-w-[200px] md:text-xs">
+    <div
+      class="flex flex-col items-center md:items-start text-center md:text-start md:max-w-[200px] md:text-xs"
+    >
       <span class="text-slate-600">Generate and download</span>
       <span class="text-slate-500"
         >After you fill inputs and upload your icon, you can have all as a
@@ -173,7 +197,12 @@
       />
     </svg>
 
-    <button (click)="Submit()" class="rounded-xl h-[56px] px-6 bg-purple-500 transition-all hover:shadow-lg active:scale-95">Submit</button>
+    <button
+      (click)="Submit()"
+      class="rounded-xl h-[56px] px-6 bg-purple-500 transition-all hover:shadow-lg active:scale-95"
+    >
+      Submit
+    </button>
   </div>
 </section>
 
@@ -429,7 +458,9 @@
 
             <div class="flex flex-nowrap items-center justify-end gap-6">
               <button class="text-xs text-blue-600">Cancel</button>
-              <button (click)="Preview = 1" class="text-xs text-blue-600">Install</button>
+              <button (click)="Preview = 1" class="text-xs text-blue-600">
+                Install
+              </button>
             </div>
           </div>
         </div>
